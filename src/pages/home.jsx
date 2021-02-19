@@ -12,13 +12,20 @@ export default class Home extends Component {
       <React.Fragment>
         <Navbar></Navbar>
         <div className="Home">
-          <img src={cripto} alt=""/>
-          <div className="home__batata">
+          <img className="home__background" src={cripto} alt=""/>
+          <div className="home__info">
+          <img className="home__infoBatata" src={batataLogo} alt=""/>
+            
+            <div className="home_conf">
+            <h1 className="home__confTitle home__titleOne">CRIPTO<br/></h1>
+            <h1 className="home__confTitle home__titleTwo">CONF</h1>
+          </div>
+          <button></button>
+          </div>
+          
             
           </div>
-          <div className="home__logo"></div>
-          <button></button>
-        </div>
+         
       
       </React.Fragment>
       

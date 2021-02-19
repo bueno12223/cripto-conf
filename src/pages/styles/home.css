@@ -2,26 +2,45 @@
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+  color: white;
 }
-
+/* importacion de la letra secundaria */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+/* Conetenedor y background */
 .Home {
     width: 100%;
-    
-  
-    
-  
+    position: relative;
     display: flex;
     align-items: center;
   }
-  .Home img{
+  .home__background{
     width: 100%;
   }
-  
-  
-  .Home__col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  /* home info*/
+  .home__info{
+    position: absolute;
+    margin-left: 60px; 
   }
+  /* home info batata */
+  .home__infoBatata{
+    left: 331px;
+    top: 140px;
+    height: 50px;
+    position: absolute;
+  }
+  /* Home conf */
+  .home__confTitle{
+    font-family: 'Spartan', sans-serif;
+    font-size: 100px;
+    bottom: 10px;
+    
+  }
+  .home__titleOne{
+    color:  #f7931a;
+  }
+  .home__titleTwo{
+    margin-bottom: 272px;
+
+  }
+  
   
