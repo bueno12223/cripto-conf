@@ -1,0 +1,35 @@
+
+.header{
+    height: 50px;
+    background-color:  #282623;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+/* Heade batata logo */
+.header__batataContainer{
+    height: 10px;
+    position: relative;
+}
+
+.header__batata{
+    margin: 10px;
+    margin-left: 10px;
+    display: inline-block;
+
+}
+.header__words{
+    display: inline-block;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    padding-bottom: 3px;
+    position: relative;
+    bottom: 15px;
+
+}
+/* header login */
+.header__login{
+    margin-right: 10px;
+    margin-top: 6px;
+}
