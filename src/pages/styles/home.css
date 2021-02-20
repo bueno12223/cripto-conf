@@ -1,9 +1,11 @@
 * {
   margin: 0;
-  padding: 0;
+  
+  
   font-family: 'Open Sans', sans-serif;
   color: white;
 }
+
 /* importacion de la letra secundaria */
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 /* Conetenedor y background */
@@ -12,23 +14,33 @@
     position: relative;
     display: flex;
     align-items: center;
+    background-image: url("../../images/lentes.jpg");
   }
   .home__background{
     width: 100%;
+    position: absolute;
+    top: 0px;
   }
   /* home info*/
   .home__info{
+    top:-22px;
     position: absolute;
     margin-left: 60px; 
+    margin-bottom: 200px;
   }
   /* home info batata */
-  .home__infoBatata{
+  .home__confBatata{
     left: 331px;
     top: 140px;
     height: 50px;
     position: absolute;
   }
   /* Home conf */
+  .home_conf{
+    left: -32px;
+    top: 124px;
+    position: absolute;
+  }
   .home__confTitle{
     font-family: 'Spartan', sans-serif;
     font-size: 100px;
@@ -38,9 +50,78 @@
   .home__titleOne{
     color:  #f7931a;
   }
-  .home__titleTwo{
-    margin-bottom: 272px;
-
+  .home__confDescription{
+    margin-left: 10px;
   }
+.home__confButton{
+  background-color: #f7931a ;
+  border-bottom: 20px;
+  border-radius: 20px;
+  border-style: none;
+  width: 170px;
+  height:   40px;
+  font-size: 19px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+/* media querys */
+/* latop L */
+@media (max-width: 1440px){
+  .home__confTitle{
+    font-size: 150px;
+  }
+  .home_conf{
+    left: -42px;
+  }
+  .home__confBatata{
+    left: 510px;
+    top: 227px;
+    width: 95px;
+  }
+
+}
+
+/* tablet */
+  @media (max-width: 768px) {
+    .home_conf{
+      position: absolute;
+      top:70px;
+      
+
+    }
+    .home__confBatata{
+      display: none;
+    }
+    
+    } 
+    /* cellphone L */
+    @media (max-width: 426px) {
+      .home__background{
+        top: 0px;
+      height: fit-content;
+      width: fit-content;
+      right: -139px;
+      }
+      .home__titleOne{
+        margin-top: 58px;
+      }
+      .home__titleTwo{
+        margin-top: 130px;
+      }
+      .home__confButton{
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+      }
+      .home__conf{
+        left: -16px;
+      }
+      html{
+        width: 173%;
+        height: 100%;
+      }
+      } 
+     
+  
   
   
