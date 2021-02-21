@@ -1,43 +1,63 @@
 * {
   margin: 0;
-  
-  
   font-family: 'Open Sans', sans-serif;
   color: white;
 }
 
+
 /* importacion de la letra secundaria */
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 /* Conetenedor y background */
+.none{
+  display: none;
+} 
+/* cree una imagen para que se generara URL del background, no tengo como importar imagenes en CSS
+entones la inserte en HTML le quite el display y solo uso el link que generó :) */
 .Home {
     width: 100%;
-    position: relative;
     display: flex;
     align-items: center;
-    background-image: url("../../images/lentes.jpg");
-  }
-  .home__background{
+    
+    background: linear-gradient(180deg, #201e1c, #000000);
+    background-repeat: no-repeat;
     width: 100%;
-    position: absolute;
-    top: 0px;
+    -webkit-animation: bgAnimateBitcoin 20s ease infinite;
+    -moz-animation: bgAnimateBitcoin 20s ease infinite;
+    animation: bgAnimateBitcoin 20s ease infinite;
   }
+  @-webkit-keyframes bgAnimateBitcoin {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes bgAnimateBitcoin {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes bgAnimateBitcoin {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+  
+ 
   /* home info*/
   .home__info{
-    top:-22px;
-    position: absolute;
-    margin-left: 60px; 
-    margin-bottom: 200px;
+    background-image: url("http://localhost:8080/assets/452286f961766f966cea80fb6de3e1a7.jpg");
+    
+    background-repeat: round;  
   }
   /* home info batata */
   .home__confBatata{
-    left: 331px;
-    top: 140px;
+    left: 289px;
+    top: 443px;
     height: 50px;
     position: absolute;
   }
   /* Home conf */
   .home_conf{
-    left: -32px;
+    left: -41px;
     top: 124px;
     position: absolute;
   }
@@ -49,6 +69,10 @@
   }
   .home__titleOne{
     color:  #f7931a;
+    margin-top: 119px;
+  }
+  .home__titleTwo{
+    margin-top: 130px;
   }
   .home__confDescription{
     margin-left: 10px;
@@ -58,69 +82,121 @@
   border-bottom: 20px;
   border-radius: 20px;
   border-style: none;
-  width: 170px;
-  height:   40px;
-  font-size: 19px;
   margin-top: 15px;
   margin-left: 10px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 22%;
+  border-radius:10px;
+  outline:none;
+  cursor: pointer;
 }
 /* media querys */
-/* latop L */
-@media (max-width: 1440px){
-  .home__confTitle{
-    font-size: 150px;
+/* mobil M  */
+@media (min-width: 375px){
+  .home__background{
+    right: 106px;
   }
-  .home_conf{
-    left: -42px;
+  .home__titleOne{
+    margin-right: 16px;
+  }
+  
+}
+/* Mobile L */
+@media (min-width: 392px){
+  .home__info{
+    width: 100%;
   }
   .home__confBatata{
-    left: 510px;
-    top: 227px;
-    width: 95px;
+    display: inline-block;
+    top: 444px;
   }
-
 }
-
-/* tablet */
-  @media (max-width: 768px) {
-    .home_conf{
-      position: absolute;
-      top:70px;
-      
-
-    }
-    .home__confBatata{
-      display: none;
-    }
+/* mobile diagonal */
+@media (min-width: 449px){
+  .home__background {
+    right: 264px;
+    height: auto;
     
-    } 
-    /* cellphone L */
-    @media (max-width: 426px) {
-      .home__background{
-        top: 0px;
-      height: fit-content;
-      width: fit-content;
-      right: -139px;
-      }
-      .home__titleOne{
-        margin-top: 58px;
-      }
-      .home__titleTwo{
-        margin-top: 130px;
-      }
-      .home__confButton{
-        width: 200px;
-        height: 50px;
-        font-size: 20px;
-      }
-      .home__conf{
-        left: -16px;
-      }
-      html{
-        width: 173%;
-        height: 100%;
-      }
-      } 
+}
+.home__titleTwo {
+  margin-top: 0px;
+ }
+ .home__titleOne{
+   margin-top: 87px;
+ }
+ .home__info{
+
+  background-image: url('http://localhost:8080/assets/947656c61e013603dbf3e2e79e3f6e15.jpg');
+  width: 100%;
+  background-position-x: center;
+  background-repeat: no-repeat;
+ }
+ .home__confBatata{
+   display: none;
+ }
+ 
+ }
+/* Tablet */
+@media (min-width: 767px){
+  .home__background {
+    right: 264px;
+    height: auto;
+    width:100%;
+}
+.home__titleTwo {
+  margin-top: 0px;
+ }
+ .home__titleOne{
+   margin-top: 87px;
+ }
+ .home__info{
+
+  background-image: url('http://localhost:8080/assets/947656c61e013603dbf3e2e79e3f6e15.jpg');
+  width: 100%;
+  background-position-x: center;
+  background-repeat: no-repeat;
+ }
+ .home__confBatata{
+   display: none;
+ }
+ .home__confTitle, .home__confButton , .home__confDescription {
+   margin-left: calc(40% - 300px);
+ }
+ 
+ }
+/* laptop */
+@media(min-width: 959px){
+  
+  .home__info{
+    background-position-x: unset;
+    background-repeat: round;
+    width: 959px;
+    margin: 0 auto;
+    box-shadow: 0px 20px 9px 11px #100f0d;;
+
+  }
+  .home__confButton{
+    margin-bottom: 25%;
+  }
+  .home__titleOne{
+    margin-top: 101px;
+  }
+  .home__confTitle, .home__confDescription, .home__confButton{
+    margin-left: 43px;
+  }
+  .home__confBatata{
+   display: inline;
+   top: 291px;
+    left:41%;
+    
+  }
+}
+/* latop L */
+
+
+    
      
   
   

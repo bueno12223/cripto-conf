@@ -1,8 +1,10 @@
-
+html{
+    background-color:#282623 ;
+}
 .header{
     height: 50px;
     background-color:  #282623;
-    width: 100%;
+    width: calc(100% +100px);
     display: flex;
     justify-content: space-between;
 }
@@ -32,4 +34,9 @@
 .header__login{
     margin-right: 10px;
     margin-top: 6px;
+}
+@media(min-width: 390px){
+    .header{
+        width: 100%;
+    }
 }

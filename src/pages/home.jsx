@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 import './styles/home.css';
 import batataLogo from '../images/batata.svg';
-import cripto from '../images/lentes.jpg';
+import cripto from '../images/lentes-3.jpg';
+import cripto2 from '../images/lentes.jpg';
 import Navbar from "../components/navbar"
 
 export default class Home extends Component {
@@ -13,21 +14,32 @@ export default class Home extends Component {
         <Navbar></Navbar>
         
         <div className="Home">
-          <img className="home__background" src={cripto} alt=""/>
+          <img className="none" src={cripto} alt=""/>
+          <img className="none" src={cripto2} alt=""/>
           <div className="home__info">
-          
-            <div className="home_conf">
-            <img className="home__confBatata" src={batataLogo} alt=""/>
+           <img className="home__confBatata" src={batataLogo} alt=""/>
             <h1 className="home__confTitle home__titleOne">CRIPTO<br/></h1>
             <h1 className="home__confTitle home__titleTwo">CONF</h1>
             <h2 className="home__confDescription">Sistema de registro</h2>
-          <button className="home__confButton">Registrarme</button>
-          </div>
+            <Link to ="/"><button
+ className="home__confButton" >Registrarme</button></Link>
+             
+         
+       
           
-          </div>
           
+            <div className="home_conf">
+
+              
+
+              </div>
             
           </div>
+          
+          </div>
+        
+            
+
          
       
       </React.Fragment>
