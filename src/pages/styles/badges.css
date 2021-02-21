@@ -1,0 +1,32 @@
+.Badges__hero {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-repeat: no-repeat;
+  background: url('http://localhost:8080/assets/947656c61e013603dbf3e2e79e3f6e15.jpg');
+  height: 188px;
+  background-size: cover;
+  background-position: 9% 41%;
+}
+
+
+.Badges__container {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.Badges_conf-logo {
+  margin-bottom: 2rem;
+}
+
+.Badges__buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+@media(max-width: 425px){
+  .Badges__hero{
+    height: 100px;
+  }
+}

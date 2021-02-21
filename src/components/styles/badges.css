@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+  text-decoration: none;
+}
+.BadgesList ul>li {
+    margin-bottom: 1rem;
+    list-style:none;
+  }
+  
+  .BadgesListItem {
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    display: flex;
+    padding: 1rem;
+    max-width: 400px;
+    margin: 0 auto ;
+    text-decoration:none;
+  }
+  
+  .BadgesListItem__avatar {
+    border-radius: 50%;
+    background: #a3a3a3;
+    margin-right: 0.5rem;
+    width: 80px;
+    height: 80px;
+  }
+  .badges_description p{
+    text-decoration:none;
+  }
+  .btn{
+    background-color: #f7931a ;
+  border-bottom: 20px;
+  border-radius: 20px;
+  border-style: none;
+  width: 170px;
+  height: 35px;
+  font-size: 16px;
+  border-radius:10px;
+  outline:none;
+  margin: 0 auto;
+  margin-left: calc(  50% - 216px);
+  margin-bottom: 10px;
+  cursor: pointer;
+  }
+  @media(max-width: 425px){
+    .btn{
+      margin-left: calc( 50% - 157px);
+    }
+  }
