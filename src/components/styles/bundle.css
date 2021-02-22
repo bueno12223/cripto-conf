@@ -3,7 +3,10 @@
     border-radius: 8px 8px 8px 8px;
     overflow: hidden;
     height: 284px;
-    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    
+    
   }
   
   .Bundle_section-name {
@@ -28,4 +31,8 @@
     width: 120px;
     height: 120px;
   }
-  
+  @media(min-width: 768px){
+    .Bundle{
+      min-width: 320px;
+    }
+  }

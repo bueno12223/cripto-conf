@@ -1,7 +1,7 @@
-import React from "react"
+import React, {Component} from 'react'
 import "./styles/bundle.css"
 
-export default class Bundle extends React.Component{
+export default class Bundle extends Component{
     render(){
         return(
                 <div className="Bundle">
@@ -13,6 +13,7 @@ export default class Bundle extends React.Component{
                         />
                     <h1>
                         {this.props.name}
+
                     </h1>
         </div>
 

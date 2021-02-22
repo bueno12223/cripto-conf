@@ -1,16 +1,9 @@
-.badges_container{
-    display: flex;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    margin: 6% auto;
-    gap: 20px;
-    height: 400px;
-    
+
+.badges{
+    margin: 0 auto;
 }
-.badges_bundle{
-    width: 40%;
-}
-.badges_form{
-    background-color: orangered;
-    width: 40%;
+@media(min-width: 768px){
+    .badges_container{
+        display: flex;
+    }
 }
