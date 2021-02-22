@@ -33,6 +33,9 @@
   }
   @media(min-width: 768px){
     .Bundle{
+      max-width: 570px;
       min-width: 320px;
+      margin: none ;
+      justify-content: center;
     }
   }
