@@ -1,19 +1,30 @@
 {
-  "name": "cript-conf",
+  "name": "cripto-conf",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.0",
-    "react-scripts": "4.0.2",
-    "web-vitals": "^1.1.0"
+    "asset-require-hook": "^1.2.0",
+    "axios": "^0.21.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "helmet": "^4.5.0",
+    "ignore-styles": "^5.0.1",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "prop-types": "^15.7.2",
+    "react-hot-loader": "^4.13.0",
+    "react-redux": "^7.2.3",
+    "react-router-config": "^5.1.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "regenerator-runtime": "^0.13.7",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "webpack serve --mode development",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "nodemon ./src/server/index.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,22 +46,23 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
-    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.17",
     "@babel/preset-react": "^7.12.13",
+    "@babel/register": "^7.13.14",
+    "@babel/runtime": "^7.12.1",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
     "boostrap": "^2.0.0",
+    "compression-webpack-plugin": "^7.1.2",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.1",
-    "jquery": "^3.5.1",
     "mini-css-extract-plugin": "^0.11.3",
-    "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
   }
 }

@@ -1,29 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Bundle from '../components/bundle';
 import './styles/badges.css';
 
 class BadgesListItem extends React.Component {
   render() {
     return (
         <React.Fragment>
-            <div className="BadgesListItem">
-          <img src={this.props.badge.image} className="BadgesListItem__avatar" alt=""/>
-          <div className="badges_description">
-              <p>
-              <strong>
-            {this.props.badge.name}
-          </strong>
-          <br />{this.props.badge.origin.name}
-          <br />{this.props.badge.species}
-
-              </p>
-
-              
-                
-          
-        </div>
-      </div>
+          <Bundle gender={this.props.badge.gender} origin={this.props.badge.origin.name} url={this.props.badge.image} name={this.props.badge.name}></Bundle>
         
 
         </React.Fragment>

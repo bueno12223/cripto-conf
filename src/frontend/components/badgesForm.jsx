@@ -41,8 +41,8 @@ export default class badgesForm extends Component{
               value={this.props.formValues.origin}
             />
           </div>
-          <Link to="/">
-          <button onClick={this.handleClick} className="btn btn-primary form-button">
+          <Link to="/badgesNew">
+          <button onClick={this.props.handleSubmit} className="btn btn-primary form-button">
             Guardar
           </button>
           </Link>

@@ -6,6 +6,7 @@
   height: 188px;
   background-size: cover;
   background-position: 9% 41%;
+  grid-column: 1/3;
 }
 
 

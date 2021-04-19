@@ -41,10 +41,10 @@ class BadgesList extends  React.Component {
         <div className="Badges__hero"></div>
 
             <div className="Badges_buttons">
-                
+
             </div>
             <div className="Badges__list">
-            <Link to="/"><button className="btn">Nuevo Bage</button></Link>
+            <Link to="/badgesNew"><button className="btn">Nuevo Bage</button></Link>
                 <div className="Badges__conatiner">
                 <Badges badges={this.state.data} />
                     
