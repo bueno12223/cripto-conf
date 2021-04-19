@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+--bitcoin-orange: #f7931a;
+--soft-white: #F0F7FF;
+--secondary-blue: #1a9af7;
+--soft-blue: #e7f5ff;
+--warm-black: #282623;
+--black-soft: #282623 ;
+--grey: #bababa;
+--off-white:  #F0F0F0;
+--just-white: #ffffff; 
+}
+body{
+    background-color:var(--black-soft) ;
+    color: var(--just-white);
+}
+button{
+    border: none;
+    text-decoration: none;
+    border-radius:10px;
+    background-color: white;
+    outline:none;
+}

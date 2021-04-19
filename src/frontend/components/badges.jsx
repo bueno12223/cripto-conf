@@ -7,12 +7,8 @@ class BadgesListItem extends React.Component {
   render() {
     return (
         <React.Fragment>
-          <Bundle gender={this.props.badge.gender} origin={this.props.badge.origin.name} url={this.props.badge.image} name={this.props.badge.name}></Bundle>
-        
-
+          
         </React.Fragment>
-      
-     
     );
   }
 }
@@ -35,10 +31,13 @@ class BadgesList extends React.Component {
         <ul className="list-unstyled">
           {this.props.badges.map(badge => {
             return (
-              
               <li key={badge.id}>
-                
-                <BadgesListItem badge={badge}></BadgesListItem>
+              <Bundle 
+                gender={badge.gender} 
+                origin={badge.origin.name} 
+                url={badge.image} 
+                name={badge.name}>
+              </Bundle>
                
                  
               </li>

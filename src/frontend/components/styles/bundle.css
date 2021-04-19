@@ -15,6 +15,9 @@
     align-items: center;
     padding: 1rem 0;
   }
+  .bundle_name{
+    font-size: 3em;
+  }
   
   .Bundle_section-info {
     display: flex;
@@ -23,6 +26,9 @@
     align-items: center;
     padding: 0.5rem 0;
     background: #f7931a;
+  }
+  .Bundle_section-info > h3 {
+    font-size: 1.5em;
   }
   
   .Bundle_avatar {

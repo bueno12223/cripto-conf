@@ -11,7 +11,7 @@ export default class Bundle extends Component{
                             src={this.props.url}
                             alt="Avatar"
                         />
-                    <h1>
+                    <h1 className='bundle_name'>
                         {this.props.name}
 
                     </h1>
@@ -19,7 +19,7 @@ export default class Bundle extends Component{
 
         <div className="Bundle_section-info">
           <h3>{this.props.gender}</h3>
-          <div>{this.props.origin}</div>
+          <h3>{this.props.origin}</h3>
         </div>
       </div>
         )
