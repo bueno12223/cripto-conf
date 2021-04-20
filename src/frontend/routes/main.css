@@ -15,13 +15,12 @@ html{
 --secondary-blue: #1a9af7;
 --soft-blue: #e7f5ff;
 --warm-black: #282623;
---black-soft: #282623 ;
 --grey: #bababa;
 --off-white:  #F0F0F0;
 --just-white: #ffffff; 
 }
 body{
-    background-color:var(--black-soft) ;
+    background-color:var(--warm-black) ;
     color: var(--just-white);
 }
 button{

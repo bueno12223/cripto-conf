@@ -1,57 +1,54 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import {Link } from 'react-router-dom'
-import "./styles/badgesNew.css"
-import "./styles/badges.css"
-import batata from "../images/batata.svg"
-
 import Bundle from "../components/bundle"
 import BadgeForm from "../components/badgesForm"
+import { onSubmit } from '../actions';
+import batata from "../images/batata.svg"
 
+import "./styles/badgesNew.css"
+import "./styles/badges.css"
+import { connect } from 'react-redux';
 
-export default class badgesNew extends Component{
-  state = {
-    form: {
-      name: '',
-      origin: '',
-      gender: '',
-      specie: ""
-    },
-  };
-  handleChange = e => {
-    
-    this.setState({
-      form: {
-        ...this.state.form,
-        [e.target.name]: e.target.value,
-      },
+const badgesNew = (props) => {
+  const [data, setData] = useState({
+    name: null,
+    email: null,
+    type: null,
+    nacionality: null
+  })
+  const handleChange = e => {
+    setData({
+        ...data,
+        [e.target.name]: e.target.value
     });
-    if(e.type == "click"){
-      console.log(this.state.form)
-    }
+  }
+  const handleSubmit = () => {
+    props.onSubmit(data)
+  }
+  return( 
+    <div className="badges_container">
+      <div className="Badges__hero"></div>
+      <div className="badges">
+          <Bundle
+            name={data.name}
+            email={data.email}
+            type={data.type}
+            url={batata}
+            nacionality={data.nacionality}
+            onSubmit={handleSubmit()}
+          ></Bundle>
+      </div>
+      <div className="badges">
+        <BadgeForm
+          onChange={handleChange}
+          handleSubmit={handleChange}
+          formValues={data}/>
+      </div>
+    </div>
+    )
 
-  };
-    render() {
-        return(
-              
-              <div className="badges_container">
-                <div className="Badges__hero"></div>
-                <div className="badges">
-                    <Bundle
-                    name={this.state.form.name}
-                    gender={this.state.form.gender }
-                    origin={this.state.form.origin}
-                    url={batata}
-                    ></Bundle>
-                </div>
-    
-                <div className="badges">
-                  <BadgeForm
-                    onChange={this.handleChange}
-                    handleSubmit={this.handleChange}
-                    formValues={this.state.form}
-                  />
-                </div>
-              </div>
-          )
-
-} }
+} 
+const mapStateToProps = {
+  onSubmit
+}
+export default connect(null, mapStateToProps)(badgesNew);

@@ -1,19 +1,21 @@
-const initialState = {
-    userAcconut: {userId: 'bueno122', email: 'berriojesus122@gmail.com'},
-    userPersonalData: {
-        visa: {
-        },
-        transacctions: [
-
-            ],
-        goals: [
-        ],
-        userFriends: [
-        ]
-
-
-        
-    } 
-
-}
-export default initialState
+const initialState = [
+    {
+        name: 'jesus',
+        email: 'berriojesus122@gmail.com',
+        type: 'online',
+        nacionality: 'Panamá'
+    },
+    {
+        name: 'jesus',
+        email: 'berriojesus12@gmail.com',
+        type: 'online',
+        nacionality: 'Panamá'
+    },
+    {
+        name: 'jesus',
+        email: 'berriojesus@gmail.com',
+        type: 'online',
+        nacionality: 'Panamá'
+    }
+]
+export default initialState;

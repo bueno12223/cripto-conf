@@ -1,38 +1,24 @@
-
 .header{
-    height: em;
-    background-color:  #282623;
-    width: calc(100% +100px);
-    display: flex;
-    justify-content: space-between;
+    height: 36px;
+    background-color: var(--warm-black);
 }
 /* Heade batata logo */
 .header__batataContainer{
-    height: 10px;
-    position: relative;
+    height: 100%;
+    margin-left: 10px;
+    display:  flex;
+    align-items: center;
 }
 
 .header__batata{
     margin: 10px;
     margin-left: 10px;
-    display: inline-block;
     height: 20px;
-
 }
 .header__words{
-    display: inline-block;
-    color: white;
-    font-size: 1em;
+    color: var(--just-white);
+    font-size: 2em;
     font-weight: bold;
-    padding-bottom: 3px;
-    position: relative;
-    bottom: 15px;
-
-}
-/* header login */
-.header__login{
-    margin-right: 10px;
-    margin-top: 6px;
 }
 @media(min-width: 390px){
     .header{

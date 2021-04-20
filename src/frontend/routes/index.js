@@ -1,16 +1,16 @@
 
-import Badges from "../pages/badgesList";
+import BadgesList from "../pages/badgesList";
 import BadgesNew from "../pages/badgesNew";
 
 const routes = [
   {
     exact:true,
     path: '/',
-    component: Badges,
+    component: BadgesList,
   },
   {
     exact:true,
-    path: '/badgesNew',
+    path: '/new',
     component: BadgesNew,
   }
 ];
