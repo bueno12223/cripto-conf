@@ -10,10 +10,7 @@ const Navbar = () => {
             <img className="header__batata" src={batataLogo} alt="logo de batata-bit"/>
             <h2 className ="header__words">Batata-bit</h2>
             </Link>
-        </header>
-           
-
-            
+        </header>  
     )
 }
 export default Navbar

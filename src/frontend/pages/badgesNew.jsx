@@ -6,7 +6,6 @@ import { onSubmit } from '../actions';
 import batata from "../images/batata.svg"
 
 import "./styles/badgesNew.css"
-import "./styles/badges.css"
 import { connect } from 'react-redux';
 
 const badgesNew = (props) => {

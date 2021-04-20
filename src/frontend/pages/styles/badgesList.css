@@ -1,0 +1,25 @@
+.Badges{
+  flex-direction: column;
+}
+.Badges__container {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.Badges_conf-logo {
+  margin-bottom: 2rem;
+}
+.Badges_buttons_container{
+  display: flex;
+  justify-content: space-evenly;
+}
+.Badges__button{
+  margin-left:  15%;
+  margin-bottom: 1rem;
+  color: var(--just-white);
+  background-color: var(--bitcoin-orange);
+  width: max-content;
+  font-size: 1.5em;
+}
