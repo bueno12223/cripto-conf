@@ -3,7 +3,6 @@
     border-radius: 8px 8px 8px 8px;
     overflow: hidden;
     height: 211px;
-    max-width: 300px;
     margin: 0 auto;
     
     
@@ -21,7 +20,7 @@
   
   .Bundle_section-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0;
@@ -30,13 +29,18 @@
   .Bundle_section-info > h3 {
     font-size: 1.5em;
   }
-  
+  .Bundle_section_img{
+    width: 39px;
+    height: 25px;
+    margin-left: 20px;
+  }
   .Bundle_avatar {
     border-radius: 50%;
     margin-right: 1rem;
     width: 120px;
     height: 120px;
   }
+  
   @media(min-width: 768px){
     .Bundle{
       max-width: 570px;

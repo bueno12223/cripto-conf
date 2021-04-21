@@ -1,21 +1,24 @@
 const initialState = [
     {
-        name: 'jesus',
+        firstName: 'jesus',
+        lastName: 'berrio',
         email: 'berriojesus122@gmail.com',
         type: 'online',
-        nacionality: 'Panamá'
+        nationality: 'PA'
     },
     {
-        name: 'jesus',
+        firstName: 'jesus',
+        lastName: 'berrio',
         email: 'berriojesus12@gmail.com',
         type: 'online',
-        nacionality: 'Panamá'
+        nationality: 'PA'
     },
     {
-        name: 'jesus',
+        firstName: 'jesus',
+        lastName: 'berrio',
         email: 'berriojesus@gmail.com',
         type: 'online',
-        nacionality: 'Panamá'
+        nationality: 'PA'
     }
 ]
 export default initialState;

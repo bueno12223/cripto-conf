@@ -21,8 +21,8 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+    extensions: ['.js', '.jsx'], 
+},
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link } from 'react-router-dom'
+import {Link } from 'react-router-dom';
 import Bundle from "../components/bundle"
 import BadgeForm from "../components/badgesForm"
 import { onSubmit } from '../actions';
@@ -10,10 +10,11 @@ import { connect } from 'react-redux';
 
 const badgesNew = (props) => {
   const [data, setData] = useState({
-    name: null,
+    firstName: null,
+    lastName: null,
     email: null,
     type: null,
-    nacionality: null
+    nationality: null
   })
   const handleChange = e => {
     setData({
@@ -25,24 +26,25 @@ const badgesNew = (props) => {
     props.onSubmit(data)
   }
   return( 
-    <div className="badges_container">
-      <div className="Badges__hero"></div>
-      <div className="badges">
+    <div className="Badges_list">
+    <div className=" row justify-content-center">
+      <div className=" col-12">
           <Bundle
-            name={data.name}
+            firstName={data.firstName}
+            lastName={data.lastName}
             email={data.email}
             type={data.type}
             url={batata}
-            nacionality={data.nacionality}
-            onSubmit={handleSubmit()}
+            nationality={data.nationality}
           ></Bundle>
       </div>
-      <div className="badges">
+      <div className=" form_container col-12">
         <BadgeForm
           onChange={handleChange}
-          handleSubmit={handleChange}
+          handleSubmit={handleSubmit}
           formValues={data}/>
       </div>
+    </div>
     </div>
     )
 

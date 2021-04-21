@@ -13,7 +13,10 @@
 }
 .Badges_buttons_container{
   display: flex;
-  justify-content: space-evenly;
+  max-width: 570px;
+  min-width: 320px;
+  margin: auto;
+  justify-content: space-between;
 }
 .Badges__button{
   margin-left:  15%;
@@ -22,4 +25,11 @@
   background-color: var(--bitcoin-orange);
   width: max-content;
   font-size: 1.5em;
+}
+.display{
+  display: block;
+  padding-right: 17px;
+}
+.displayNone{
+  display: none;
 }

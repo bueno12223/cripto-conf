@@ -1,16 +1,9 @@
-
-.badges{
+.Badges_list{
+    width: 80%;
     margin: 0 auto;
+    margin-bottom: 20%;
 }
-@media(min-width: 768px){
-    .badges_container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        gap: 10px;
-        justify-content: center;
-    }
-    .badges{
-        margin: 0 0;
-    }
+.form_container{
+    max-width: 570px;
+    min-width: 320px;
 }

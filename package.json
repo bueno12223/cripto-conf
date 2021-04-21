@@ -1,8 +1,23 @@
 {
-  "name": "cripto-conf",
-  "version": "0.1.0",
-  "private": true,
-  "main": "index.js",
+  "name": "cript-conf",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bueno12223/cripto-conf.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bueno12223/cripto-conf/issues"
+  },
+  "homepage": "https://github.com/bueno12223/cripto-conf#readme",
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "asset-require-hook": "^1.2.0",
@@ -18,18 +33,17 @@
     "passport": "^0.4.1",
     "passport-http": "^0.3.0",
     "prop-types": "^15.7.2",
+    "react-bootstrap": "^1.5.2",
     "react-hot-loader": "^4.13.0",
     "react-redux": "^7.2.3",
     "react-router-config": "^5.1.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.7",
+    "request": "^2.79.0",
     "style-loader": "^2.0.0",
     "webpack-dev-middleware": "^3.7.3",
     "webpack-hot-middleware": "^2.25.0"
-  },
-  "scripts": {
-    "dev": "nodemon ./src/server/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -41,13 +55,22 @@
     "@babel/register": "^7.13.14",
     "@babel/runtime": "^7.12.1",
     "babel-core": "^6.26.3",
-    "boostrap": "^2.0.0",
+    "browserify-fs": "^1.0.0",
+    "constants-browserify": "^1.0.0",
+    "crypto-browserify": "^3.12.0",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.1",
+    "https-browserify": "^1.0.0",
     "mini-css-extract-plugin": "^0.11.3",
+    "node-polyfill-webpack-plugin": "^1.1.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "vm-browserify": "^1.1.2",
     "webpack": "^5.34.0",
     "webpack-cli": "^4.6.0"
   }

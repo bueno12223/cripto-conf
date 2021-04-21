@@ -31,7 +31,6 @@ if (ENV  === 'development') {
 }else{
 	app.use(express.static('../public'));
 	app.use(helmet());
-	app.use(helmet.permiteCrossDomainPolices());
   app.set('x-powered-by', false);
 }
 
