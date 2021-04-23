@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
-import {Link } from 'react-router-dom';
 import Bundle from "../components/bundle"
 import BadgeForm from "../components/badgesForm"
-import { onSubmit } from '../actions';
+import { registerUser } from '../actions';
 import batata from "../images/batata.svg"
 
 import "./styles/badgesNew.css"
@@ -14,7 +13,8 @@ const badgesNew = (props) => {
     lastName: null,
     email: null,
     type: null,
-    nationality: null
+    nationality: null,
+    showAlert: false
   })
   const handleChange = e => {
     setData({
@@ -23,7 +23,13 @@ const badgesNew = (props) => {
     });
   }
   const handleSubmit = () => {
-    props.onSubmit(data)
+    const {firstName,lastName,email,type,nationality} = data
+    if(firstName && lastName && email && type && nationality){
+      props.registerUser(data, '/')
+    }else{
+      setData({...data, showAlert: true})
+      setTimeout(() => setData({...data, showAlert: false}), 5000)
+    }
   }
   return( 
     <div className="Badges_list">
@@ -40,6 +46,7 @@ const badgesNew = (props) => {
       </div>
       <div className=" form_container col-12">
         <BadgeForm
+        showAlert={data.showAlert}
           onChange={handleChange}
           handleSubmit={handleSubmit}
           formValues={data}/>
@@ -50,6 +57,6 @@ const badgesNew = (props) => {
 
 } 
 const mapStateToProps = {
-  onSubmit
+  registerUser
 }
 export default connect(null, mapStateToProps)(badgesNew);

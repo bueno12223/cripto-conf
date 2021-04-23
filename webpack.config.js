@@ -1,12 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 require('dotenv').config();
 const isDev = (process.env.ENV === 'development');
 const entry = ['./src/frontend/index.js'];
 if (isDev) {
-    entry.push('webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr')
+    entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000$reload=true')
 };
 
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
@@ -17,12 +18,12 @@ module.exports = {
   mode: process.env.ENV,
   output: {
     path: path.resolve(__dirname, 'src/server/public'),
-    filename: isDev ? 'assets/app.js' : 'assets/app-[hash].js',
+    filename: isDev ? 'assets/app.js' : 'assets/app-[fullhash].js',
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx'], 
-},
+    extensions: ['.js', '.jsx'],
+  },
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
@@ -51,7 +52,7 @@ module.exports = {
           {
             'loader': 'file-loader',
             options: {
-              name: 'assets/[hash].[ext]'
+              name: 'assets/[name][fullhash].[ext]'
             }
           }
         ]
@@ -63,14 +64,17 @@ module.exports = {
     hot: true
   },
   plugins: [
-    isDev ? () => {} :
-    new CompressionWebpackPlugin({
-        test:/\.js$|\.css$/,
+    isDev ? new webpack.HotModuleReplacementPlugin() :
+      () => { },
+    isDev ? () => { } :
+      new CompressionWebpackPlugin({
+        test: /\.js$|\.css$/,
         filename: '[path].gz',
-    }),
-    isDev ? new webpack.HotModuleReplacementPlugin() : ()=> {},
+      }),
+    isDev ? () => { } :
+    new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
-      filename: isDev ? 'assets/app.css' : 'assets/app-[hash].css',
-  }), 
+      filename: isDev ? 'assets/app.css' : 'assets/app-[fullhash].css',
+    }),
   ],
 };

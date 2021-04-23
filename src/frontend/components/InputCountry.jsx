@@ -3,8 +3,8 @@ import React from 'react'
 function InputCountry(props) {
     return (
         <div>
-<select defaultValue='0' value={props.value} className='form-select' name="nationality" onChange={e => props.onChange(e)}>
-<option value="0"></option>
+<select required defaultValue='0' value={props.value} className='form-select' name="nationality" onChange={e => props.onChange(e)}>
+<option defaultValue ></option>
 <option value="AF">Afganistán</option>
 <option value="AL">Albania</option>
 <option value="DE">Alemania</option>

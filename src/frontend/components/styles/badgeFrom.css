@@ -57,3 +57,10 @@
 .form-group{
     display: block;
 }
+/* alert display */
+.NotDisplayAlert{
+    display: none;
+}
+.displayAlert{
+    display: block;
+}

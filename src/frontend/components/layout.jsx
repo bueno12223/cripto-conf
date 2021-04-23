@@ -8,10 +8,7 @@ function layout (props) {
                 <Navbar></Navbar>
                 <Hero></Hero>
                 {props.children}
-
             </div>
-                
-            
             );
     
 }

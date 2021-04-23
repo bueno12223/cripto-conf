@@ -42,10 +42,10 @@ const BadgesList = (props) =>  {
               </Button>
             </Modal.Footer>
       </Modal>
-            {props.users.map(badge => {
+            {props.users.map((badge, idx) => {
 
               return (
-                <li key={badge.name}>
+                <li key={idx}>
                   <Bundle
                     firstName={badge.firstName}
                     lastName={badge.lastName}

@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Link } from 'react-router-dom'
+import React from 'react';
+import { Alert, Button, Fade } from 'react-bootstrap';
 import "./styles/badgeFrom.css"
 import InputCountry from './InputCountry'
 
@@ -7,27 +7,34 @@ const badgesForm  = (props) => {
   const handleCountry = (e) => {
     props.onChange(e)
   }
+  console.log(props.showAlert)
   return(
     <div className='form-container'>
+      <Alert  variant='danger' transition={Fade} show={props.showAlert}  >
+        Aún no has llenado todos los campos
+      </Alert>  
       <h1>Nombre y Apellido</h1> 
       <form className="form-input">
         <div className="form-group col-8">
           <label>Nombre y Apellido</label>
-          <input
+          <input           
             value={props.formValues.firstName} 
             name="firstName" onChange={props.onChange} 
             type="text" aria-label="First name" 
-            className="form-control"/>
+            className="form-control"
+            required/>
           <input 
             value={props.formValues.lastName} 
             name="lastName" onChange={props.onChange} 
             type="text" aria-label="First name" 
-            className="form-control"/>
+            className="form-control"
+            required/>
         </div>
 
         <div className="form-group col-8">
           <label>Correo</label>
           <input
+            required
             value={props.formValues.email} 
             name="email" onChange={props.onChange} 
             type="text" aria-label="First name" 
@@ -44,18 +51,17 @@ const badgesForm  = (props) => {
         <div className="form-group col-8">
           <label>Tipo</label><br/>
           <select 
-          className="form-select" 
-          name='type'
-          onChange={props.onChange}
-          value={props.formValues.type}>
-            <option value="0"></option>
+            required
+            className="form-select" 
+            name='type'
+            onChange={props.onChange}
+            value={props.formValues.type}>
+            <option defaultValue></option>
             <option value="presencial">presencial</option>
             <option value="online">Online</option>
           </select>
         </div>
-        <Link to="/">
-        <button onClick={props.handleSubmit} className="btn btn-primary form-button">Guardar</button>
-        </Link>
+        <Button variant="primary" size="lg" onClick={ props.handleSubmit } className="form-button">Guardar</Button>
         
       </form>
   </div>

@@ -1,11 +1,9 @@
 const reducer = (state, action) =>{
 
 	switch(action.type){
-		case 'REGISTER_REQUEST':
-			console.log(action.payload)
+		case 'ERROR_REQUEST':
 		return [
-			...state,
-			action.payload
+			...state
 		]
 		default:
 			return state;

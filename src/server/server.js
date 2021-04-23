@@ -7,14 +7,16 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
+import helmet from 'helmet';
+import axios from 'axios';
 import serverRoutes from '../frontend/routes/index';
 import reducer from '../frontend/reducers/index';
-import initialState from '../frontend/initalState';
-import helmet from 'helmet';
+import getManifest from './getManifest';
 
 dotenv.config();
 const { ENV, PORT } = process.env;
 const app = express();
+app.use(express.json());
 
 if (ENV  === 'development') {
   console.log('Development config');
@@ -23,38 +25,44 @@ if (ENV  === 'development') {
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(webpackConfig);
   const { publicPath } = webpackConfig.output;
-  const serverConfig = { serverSideRender: true, publicPath };
+  const serverConfig = { serverSideRender: false, publicPath };
 
   app.use(webpackDevMiddleware(compiler, serverConfig));
-  app.use(webpackHotMiddleware(compiler));
 
 }else{
-	app.use(express.static('../public'));
-	app.use(helmet());
-  app.set('x-powered-by', false);
+  app.use((req, res, next) => {
+    if (!req.hashManifest) req.hashManifest = getManifest();
+    next();
+  });
+  app.use(express.static(`${__dirname}/public`));
 }
 
-const setResponse = (html, preloadedState) => {
+const setResponse = (html, preloadedState, manifest) => {
+  const mainStyles = manifest ? manifest['main.css'] : 'assets/app.css';
+  const mainBuild = manifest ? manifest['main.js'] : 'assets/app.js';
+  const flavicon = manifest['assets/batata.svg']
   return (`
   <!DOCTYPE html>
   <html>
     <head>
-      <link rel="stylesheet" href="assets/app.css" type="text/css">
-      <title>Platzi Video</title>
+    <link rel="icon" type="image/svg" href="${flavicon}" />
+    <title>cripto-conf</title>
+    <link rel="stylesheet" href='${mainStyles}' type="text/css">
     </head>
     <body>
       <div id="app">${html}</div>
       <script>
         window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
       </script>
-      <script src="assets/app.js" type="text/javascript"></script>
+      <script src='${mainBuild}' type="text/javascript"></script>
     </body>
   </html>
   `);
 };
 
-const renderApp = (req, res) => {
-  const store = createStore(reducer, initialState);
+const renderApp = async(req, res) => {
+  const initialState = await axios.get(`http://${process.env.API}/api`);
+  const store = createStore(reducer, initialState.data);
   const preloadedState = store.getState();
   const html = renderToString(
     <Provider store={store}>
@@ -64,31 +72,29 @@ const renderApp = (req, res) => {
     </Provider>,
   );
 
-  res.send(setResponse(html, preloadedState));
+  res.send(setResponse(html, preloadedState, req.hashManifest));
 };
 
-
-
 app.post("/auth/sign-up", async function (req, res, next) {
-  const { body: user } = req;
+  const {firstName, lastName, email, type, nationality} = req.body;
   try {
-    const userData = await axios({
-      url: `${process.env.API}/api/auth/sign-up`,
-      method: "post",
-      data: {
-        'email': user.email,
-        'name': user.name,
-        'type': user.type,
-        'plan': user.plan,
-        'nacionality': user.nacionality
-      }
-    });
-
-    res.status(201).json({
-      name: req.body.name,
-      email: req.body.email,
-      id: userData.data.id
-    });
+    const result = await axios.post(`http://${process.env.API}/api`,{
+      firstName, 
+      lastName,
+      email,
+      type,
+      nationality
+    })
+    console.log(result)
+    if(result.status == 201 ){
+      res.status(result.status).json({
+        'message':'user post it succsessfully', 
+        'id': result.data 
+      })
+    }else{
+      res.status(result.status).json({
+        'message': 'error in post data'})
+    }
   } catch (error) {
     next(error);
   }
