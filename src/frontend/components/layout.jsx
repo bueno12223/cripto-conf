@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from "./navbar";
 import Hero from './hero';
 
-function layout (props) {
+function Layout (props) {
         return (
             <div>
                 <Navbar></Navbar>
@@ -12,4 +12,4 @@ function layout (props) {
             );
     
 }
-export default layout
+export default Layout
