@@ -62,7 +62,7 @@ const setResponse = (html, preloadedState, manifest) => {
 };
 
 const renderApp = async(req, res) => {
-  const initialState = await axios.get(`http://${process.env.API}/api`);
+  const initialState = await axios.get(`${process.env.API}/api`);
   const store = createStore(reducer, initialState.data);
   const preloadedState = store.getState();
   const html = renderToString(

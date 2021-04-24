@@ -1,19 +1,22 @@
 {
-  "name": "cript-conf",
+  "name": "cripto-conf",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "webpack.config.js",
+  "main": "src/server/index",
   "scripts": {
     "start": "node ./src/server/index --config webpack.config.js",
     "dev": "nodemon ./src/server/index",
     "build": "webpack-cli --config webpack.config.js"
+  },
+  "engines": {
+    "node": "15.5.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bueno12223/cripto-conf.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "jesus berrio berriojesus122@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bueno12223/cripto-conf/issues"
