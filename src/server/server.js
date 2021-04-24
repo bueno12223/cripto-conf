@@ -77,21 +77,18 @@ const renderApp = async(req, res) => {
 };
 
 app.post("/auth/sign-up", async function (req, res, next) {
+  console.log(req.body, "ejecutao")
   const {firstName, lastName, email, type, nationality} = req.body;
   try {
-    const result = await axios.post(`http://${process.env.API}/api`,{
+    const result = await axios.post(`${process.env.API}/api`,{
       firstName, 
       lastName,
       email,
       type,
       nationality
     })
-    console.log(result)
     if(result.status == 201 ){
-      res.status(result.status).json({
-        'message':'user post it succsessfully', 
-        'id': result.data 
-      })
+      res.status(result.status).json(result.data)
     }else{
       res.status(result.status).json({
         'message': 'error in post data'})
