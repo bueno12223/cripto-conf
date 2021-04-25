@@ -10,6 +10,8 @@ Solo debes tener nodemon instalado de forma global si quieres trabajar en modo d
 npm i nodemon -g
 ```
 
+Segundo debes tener el API de cripto conf puedes clonarlo [aquí](https://github.com/bueno12223/cripto-conf-API) o puedes usar la desplegada en heroku `https://cripto-confapi.herokuapp.com`
+
 ## Scripts disponibles :file_folder:
 
 En este proyecto puedes correr:

@@ -9,6 +9,8 @@ You should have nodemon global if you going to run this proyect in development m
 ```bash
 npm i nodemon -g
 ```
+You have to also have the API of crito conf [here](https://github.com/bueno12223/cripto-conf-API) or use de public version `https://cripto-confapi.herokuapp.com`
+
 
 ## Available Scripts :file_folder:
 
