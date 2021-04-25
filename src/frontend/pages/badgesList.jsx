@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button, Modal, Form , FormGroup } from 'react-bootstrap';
 import Bundle from '../components/bundle';
-import Loader from '../components/loader';
 import "./styles/badgesList.css";
 
 const BadgesList = (props) =>  {
@@ -11,10 +10,6 @@ const BadgesList = (props) =>  {
 
   const handleClose = () => setDisplay(false);
   const handleShow = () => setDisplay(true);
-
-  if(props.users.length == 0)(
-    <Loader></Loader>
-  )
   return(
     <React.Fragment>
       <div className="Badges__conatiner">
